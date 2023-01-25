@@ -1,0 +1,31 @@
+{% extends 'navbar.html' %}
+{% block content %}
+<form method="post">
+  {% csrf_token %}
+  <h2 align="center">Update books</h2>
+  <table align="center">
+    <tr>
+      <td>Bookname</td>
+      <td><input type="text" name="txtbname" value="{{ book.Book_name }}"></td>
+    </tr>
+    <tr>
+      <td>Authorname</td>
+      <td><input type="text" name="txtauth" value="{{ book.Author_name }}"></td>
+    </tr>
+    <tr>
+      <td>Course</td>
+      <td><select name="ddlcourse" >
+        <option selected>{{ book.Course_id }}</option>
+        {% for i in course %}
+        <option>{{ i.course_name }}</option>
+        {% endfor %}
+      </select></td>
+    </tr>
+    <tr>
+
+      <td><input type="submit" name="btnsubmit" value="ADDBOOK"></td>
+    </tr>
+  </table>
+</form>
+<h2 align="center">{{ msg }}</h2>
+{% endblock %}

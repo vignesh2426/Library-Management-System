@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/reg.css' %}">
+    <title>Title</title>
+</head>
+<body>
+<form action="s_data" method="post">
+    {% csrf_token %}
+    <h2 align="center">Student signup</h2>
+    <table align="center">
+        <tr>
+            <td>Student Name:</td>
+            <td><input type="text" name="txtname"></td>
+        </tr>
+        <tr>
+            <td>Phone Number:</td>
+            <td><input type="number" name="txtphno"></td>
+        </tr>
+      <tr>
+        <td>Sem:</td>
+        <td><input type="number" name="txtsem"></td>
+      </tr>
+      <tr>
+        <td>Password:</td>
+        <td><input type="password" name="txtpwrd"></td>
+      </tr>
+      <tr>
+        <td>Course</td>
+        <td><select name="ddlcourse">
+          {% for i in course_data %}
+            <option>{{ i.course_name }}</option>
+          {% endfor %}
+        </select></td>
+      </tr>
+        <tr>
+            <td><input type="submit" name="btnsubmit" value="submit"></td>
+        </tr>
+    </table>
+    <h2 align="center" style="color:red">{{ data }}</h2>
+</form>
+</body>
+</html>

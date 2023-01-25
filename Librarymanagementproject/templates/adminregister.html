@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/reg.css' %}">
+    <title>admin signup</title>
+
+</head>
+<body>
+<form action="a_data" method="post">
+    {% csrf_token %}
+    <h2 align="center">Admin signup</h2>
+    <table align="center">
+        <tr>
+            <td>User Name:</td>
+            <td><input type="text" name="txtname"></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><input type="email" name="txtemail"></td>
+
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="password" name="txtpwrd"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" name="btnsubmit" value="SIGNUP"></td>
+        </tr>
+        <h2 align="center" style="color:red">{{ data }}</h2>
+    </table>
+</form>
+</body>
+</html>

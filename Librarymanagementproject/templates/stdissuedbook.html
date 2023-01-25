@@ -1,0 +1,19 @@
+{% extends 'stdnavbar.html' %}
+{% block content %}
+<table class="table">
+    <tr>
+        <th>Student Name</th>
+        <th>Book name</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+    </tr>
+    {% for i in books %}
+    <tr>
+        <td>{{ i.Student_Name }}</td>
+        <td>{{ i.Book_Name }}</td>
+        <td>{{ i.Start_date }}</td>
+        <td>{{ i.End_date }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
